@@ -202,7 +202,7 @@ def main():
             # getting detail of anamolies like source, destination, and info
             # Filter and select columns
             if 'cluster_gaussian' in input_df.columns:
-                anomaly_details = input_df[input_df['cluster_gaussian'] == 1][['source', 'destination', 'info']]
+                anomaly_details = input_df[input_df['cluster_gaussian'] == 1][['Source', 'Destination', 'Info']]
                 
                 if not anomaly_details.empty:
                     st.write("### Anomaly Details")

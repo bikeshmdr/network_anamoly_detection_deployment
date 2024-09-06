@@ -1,7 +1,3 @@
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # To reduce TensorFlow logging
-
-
 import streamlit as st
 import numpy as np
 import pandas as pd

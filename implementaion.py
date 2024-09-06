@@ -201,8 +201,8 @@ def main():
 
             # getting detail of anamolies like source, destination, and info
             # Filter and select columns
-            if 'cluster' in df.columns and 'source' in df.columns and 'destination' in df.columns and 'info' in df.columns:
-                anomaly_details = df[df['cluster'] == 1][['source', 'destination', 'info']]
+            if 'cluster' in input_df.columns:
+                anomaly_details = input_df[input_df['cluster'] == 1][['source', 'destination', 'info']]
                 
                 if not anomaly_details.empty:
                     st.write("### Anomaly Details")
@@ -211,7 +211,7 @@ def main():
                     # Prepare the CSV file for download
                     @st.cache
                     def convert_df_to_csv(df):
-                        return df.to_csv(index=False).encode('utf-8')
+                        return input_df.to_csv(index=False)
 
                     csv_data = convert_df_to_csv(anomaly_details)
 
